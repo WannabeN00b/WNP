@@ -1,97 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
+  <title>MD Mahede Hasan Chowdhury — WANNABENOOB</title>
 
   <meta
     name="description"
-    content="MD Mahede Hasan Chowdhury — WANNABENOOB. Creative developer, visual designer, photographer, editor and FiveM/Qbox creator based in London."
+    content="MD Mahede Hasan Chowdhury — Creative Developer, Visual Designer, Photographer, Editor and FiveM/Qbox Creator based in London."
   >
-
-  <title>MD Mahede Hasan — WANNABENOOB</title>
-
-  <!-- =========================================================
-       GOOGLE FONTS
-       ---------------------------------------------------------
-       DM Sans   → body / UI
-       Manrope   → large headings
-       ========================================================= -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
-  <!-- =========================================================
-       MAIN CSS
-       ---------------------------------------------------------
-       style.css controls the main website design.
-       ========================================================= -->
-
   <link rel="stylesheet" href="style.css">
 
-  <!-- =========================================================
-       HERO + IMAGE FIXES
-       ---------------------------------------------------------
-       These rules intentionally override any conflicting
-       rules in style.css.
-
-       HERO:
-       .hero                  → entire hero
-       .hero::before         → day/night photograph
-       .hero::after          → COMPLETELY DISABLED
-       .hero-art             → 創 / WN. artwork
-       .hero-copy            → text
-       .hero-buttons         → buttons
-       .hero-bottom          → category bar
-
-       IMPORTANT:
-       The original day/night photographs are displayed at
-       full opacity with NO colour filter and NO overlay.
-       ========================================================= -->
-
-  <style id="mahede-index-overrides">
-
+  <style>
     /* =========================================================
-       GLOBAL IMAGE SAFETY
-       ---------------------------------------------------------
-       Prevents browser image behaviour from creating strange
-       inline gaps or unexpected sizing.
-       ========================================================= */
-
-    img {
-      max-width: 100%;
-    }
-
-
-    /* =========================================================
-       HERO SECTION
-       ---------------------------------------------------------
-       The hero photo is the actual background.
-
-       LIGHT MODE:
-       assets/day.PNG
-
-       DARK MODE:
-       assets/night.PNG
-
-       NO overlay.
-       NO gradient.
-       NO brightness filter.
-       NO opacity reduction.
+       HERO DAY / NIGHT IMAGE
        ========================================================= */
 
     .hero {
@@ -103,13 +35,15 @@
       background-color: transparent !important;
     }
 
+    /*
+      DAY IMAGE
 
-    /* =========================================================
-       HERO PHOTOGRAPH
-       ---------------------------------------------------------
-       This is the ONLY element responsible for the hero
-       photograph.
-       ========================================================= */
+      This is the original image.
+      No opacity.
+      No filter.
+      No blend mode.
+      No colour adjustment.
+    */
 
     .hero::before {
       content: "" !important;
@@ -120,69 +54,52 @@
       z-index: -2 !important;
 
       background-image: url("assets/day.PNG") !important;
-
       background-position: center center !important;
       background-size: cover !important;
       background-repeat: no-repeat !important;
 
       opacity: 1 !important;
-
       filter: none !important;
-
       mix-blend-mode: normal !important;
 
       transform: none !important;
     }
 
-
-    /* =========================================================
-       DARK MODE HERO PHOTOGRAPH
-       ========================================================= */
+    /*
+      NIGHT IMAGE
+    */
 
     body.dark .hero::before {
       background-image: url("assets/night.PNG") !important;
 
       opacity: 1 !important;
-
       filter: none !important;
-
       mix-blend-mode: normal !important;
 
       transform: none !important;
     }
 
-
-    /* =========================================================
-       HERO OVERLAY — DISABLED
-       ---------------------------------------------------------
-       The previous version used a white/black gradient here.
-       That was making your original photographs look different.
-
-       It is now completely removed.
-       ========================================================= */
+    /*
+      IMPORTANT:
+      NO WHITE OR BLACK GRADIENT OVER THE PHOTO.
+    */
 
     .hero::after,
     body.dark .hero::after {
       content: none !important;
-
       display: none !important;
 
       background: none !important;
       background-color: transparent !important;
 
       opacity: 0 !important;
-
       box-shadow: none !important;
-
       filter: none !important;
     }
 
-
-    /* =========================================================
-       HERO CONTENT LAYER
-       ---------------------------------------------------------
-       Keeps text/artwork above the photograph.
-       ========================================================= */
+    /*
+      Keep hero content above the photo.
+    */
 
     .hero > * {
       position: relative;
@@ -191,19 +108,7 @@
 
 
     /* =========================================================
-       HERO ART
-       ---------------------------------------------------------
-       Controls:
-       創
-       WN.
-       WANNABENOOB
-       Creative practice / London
-       01—04
-
-       IMPORTANT:
-       No black box.
-       No white box.
-       No background.
+       HERO ARTWORK
        ========================================================= */
 
     .hero-art {
@@ -211,41 +116,48 @@
       background-color: transparent !important;
 
       border: none !important;
-
       box-shadow: none !important;
-
       outline: none !important;
 
       filter: none !important;
     }
 
-
     .hero-art::before,
     .hero-art::after {
       content: none !important;
-
       display: none !important;
 
       background: none !important;
       background-color: transparent !important;
 
       box-shadow: none !important;
-
       filter: none !important;
     }
 
 
     /* =========================================================
-       HERO ART INTERNAL ELEMENTS
-       ---------------------------------------------------------
-       These are the actual typography elements.
+       01—04
+       Keep the text, remove ONLY its background.
        ========================================================= */
 
-    .art-red,
-    .art-wmark,
-    .art-caption,
     .art-index {
       background: transparent !important;
+      background-color: transparent !important;
+
+      border: none !important;
+      box-shadow: none !important;
+      outline: none !important;
+
+      padding: 0 !important;
+    }
+
+    .art-index::before,
+    .art-index::after {
+      content: none !important;
+      display: none !important;
+
+      background: transparent !important;
+      background-color: transparent !important;
 
       box-shadow: none !important;
     }
@@ -253,939 +165,263 @@
 
     /* =========================================================
        PROJECT IMAGES
-       ---------------------------------------------------------
-       IMPORTANT:
-       object-fit: contain
-
-       This means the actual image is NOT cropped.
-
-       The image will fit inside the project area while keeping
-       its original aspect ratio.
+       Prevent cropping.
        ========================================================= */
 
     .project-image {
       position: relative;
+      overflow: hidden;
 
       width: 100%;
       height: 100%;
-
-      overflow: hidden;
     }
 
-
-    .project-image > img {
+    .project-image > img:first-child {
       width: 100%;
       height: 100%;
 
       display: block;
 
       object-fit: contain;
-
-      object-position: center center;
+      object-position: center;
 
       background: #111;
-
-      border: 0;
-
-      outline: 0;
-    }
-
-
-    /* =========================================================
-       PROJECT IMAGE SOURCES
-       ---------------------------------------------------------
-       Light Studio:
-       assets/light.png
-
-       Hydragonz:
-       assets/hydra.png
-
-       Hydragonz logo:
-       assets/logo.png
-
-       Motion:
-       assets/motion.jpg
-
-       Web:
-       assets/web.png
-
-       Photography:
-       assets/photo.png
-
-       FiveM:
-       assets/fivem.jpg
-       ========================================================= */
-
-    .light-art {
-      background: #111 url("assets/light.png") center center
-        / contain no-repeat !important;
-    }
-
-    .hydra-art {
-      background: #111 url("assets/hydra.png") center center
-        / contain no-repeat !important;
-    }
-
-    .photo-art {
-      background: #111 url("assets/photo.png") center center
-        / contain no-repeat !important;
-    }
-
-
-    /* =========================================================
-       IMAGE OVERLAY
-       ---------------------------------------------------------
-       Project labels remain above images.
-
-       This overlay is ONLY for project cards.
-       It does NOT affect the hero photograph.
-       ========================================================= */
-
-    .project-image .image-overlay {
-      position: absolute;
-
-      inset: auto 0 0 0;
-
-      z-index: 3;
-
-      pointer-events: none;
     }
 
 
     /* =========================================================
        MOBILE HERO
-       ---------------------------------------------------------
-       Still uses the original photograph.
-
-       No mobile gradient overlay.
        ========================================================= */
 
     @media (max-width: 900px) {
 
-      .hero::before,
-      body.dark .hero::before {
+      .hero::before {
         background-position: center center !important;
-
         background-size: cover !important;
-
-        opacity: 1 !important;
-
-        filter: none !important;
       }
+
+      /*
+        Still NO overlay on mobile.
+      */
 
       .hero::after,
       body.dark .hero::after {
         display: none !important;
-
         content: none !important;
+        background: none !important;
       }
-
     }
-
-
-    /* =========================================================
-       MOBILE NAVIGATION
-       ========================================================= */
-
-    .menu-button {
-      display: none;
-
-      align-items: center;
-      justify-content: center;
-
-      gap: 10px;
-
-      min-width: 88px;
-      height: 42px;
-
-      padding: 0 14px;
-
-      border: 1px solid var(--line);
-
-      background: transparent;
-
-      color: var(--ink);
-
-      cursor: pointer;
-
-      font: inherit;
-    }
-
-
-    .menu-label {
-      font-size: 11px;
-
-      font-weight: 700;
-
-      letter-spacing: .08em;
-
-      text-transform: uppercase;
-    }
-
-
-    .menu-icon {
-      width: 18px;
-      height: 14px;
-
-      position: relative;
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: center;
-
-      gap: 5px;
-    }
-
-
-    .menu-icon i {
-      display: block;
-
-      width: 18px;
-      height: 1px;
-
-      background: currentColor;
-
-      transition:
-        transform .25s ease;
-    }
-
-
-    .menu-button[aria-expanded="true"]
-    .menu-icon i:first-child {
-      transform:
-        translateY(3px)
-        rotate(45deg);
-    }
-
-
-    .menu-button[aria-expanded="true"]
-    .menu-icon i:last-child {
-      transform:
-        translateY(-3px)
-        rotate(-45deg);
-    }
-
-
-    /* =========================================================
-       MOBILE MENU PANEL
-       ========================================================= */
-
-    .menu-panel {
-      position: fixed;
-
-      inset: 0;
-
-      z-index: 9990;
-
-      padding: 100px 24px 30px;
-
-      background: var(--bg);
-
-      color: var(--ink);
-
-      opacity: 0;
-
-      visibility: hidden;
-
-      pointer-events: none;
-
-      transform: translateY(-10px);
-
-      transition:
-        opacity .25s ease,
-        visibility .25s ease,
-        transform .25s ease;
-    }
-
-
-    .menu-panel[aria-hidden="false"] {
-      opacity: 1;
-
-      visibility: visible;
-
-      pointer-events: auto;
-
-      transform: translateY(0);
-    }
-
-
-    .menu-inner {
-      width: 100%;
-
-      max-width: 760px;
-
-      margin: 0 auto;
-    }
-
-
-    .mobile-menu-top {
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: flex-start;
-
-      gap: 30px;
-    }
-
-
-    .menu-note {
-      max-width: 280px;
-
-      margin: 8px 0 0;
-
-      color: var(--muted);
-
-      font-size: 12px;
-
-      line-height: 1.5;
-    }
-
-
-    .mobile-menu-index {
-      font-size: 11px;
-
-      letter-spacing: .12em;
-
-      color: var(--muted);
-    }
-
-
-    /* =========================================================
-       MOBILE MENU LINKS
-       ========================================================= */
-
-    .menu-links {
-      margin-top: 35px;
-    }
-
-
-    .menu-links a {
-      display: grid;
-
-      grid-template-columns:
-        38px
-        1fr
-        24px;
-
-      align-items: center;
-
-      gap: 12px;
-
-      padding: 18px 0;
-
-      border-bottom:
-        1px solid var(--line);
-
-      color: var(--ink);
-
-      text-decoration: none;
-    }
-
-
-    .menu-links a:first-child {
-      border-top:
-        1px solid var(--line);
-    }
-
-
-    .menu-number {
-      font-size: 10px;
-
-      color: var(--muted);
-
-      letter-spacing: .08em;
-    }
-
-
-    .menu-links strong {
-      font-size:
-        clamp(25px, 7vw, 42px);
-
-      font-weight: 600;
-
-      line-height: 1;
-
-      letter-spacing: -.04em;
-    }
-
-
-    .menu-arrow {
-      font-size: 18px;
-
-      text-align: right;
-
-      transition:
-        transform .2s ease;
-    }
-
-
-    .menu-links a:hover .menu-arrow,
-    .menu-links a:focus-visible .menu-arrow {
-      transform:
-        translate(3px, -3px);
-    }
-
-
-    /* =========================================================
-       MOBILE MENU SOCIAL LINKS
-       ========================================================= */
-
-    .mobile-menu-bottom {
-      margin-top: 35px;
-
-      padding-top: 25px;
-    }
-
-
-    .mobile-menu-label {
-      display: block;
-
-      margin-bottom: 14px;
-
-      font-size: 10px;
-
-      font-weight: 700;
-
-      letter-spacing: .12em;
-
-      text-transform: uppercase;
-
-      color: var(--muted);
-    }
-
-
-    .menu-social {
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 8px;
-    }
-
-
-    .menu-social a {
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      min-height: 42px;
-
-      padding: 0 12px;
-
-      border:
-        1px solid var(--line);
-
-      color: var(--ink);
-
-      text-decoration: none;
-
-      font-size: 11px;
-
-      font-weight: 600;
-    }
-
-
-    .menu-social a span {
-      color: var(--muted);
-    }
-
-
-    body.menu-open {
-      overflow: hidden;
-    }
-
-
-    /* =========================================================
-       MOBILE BREAKPOINT
-       ========================================================= */
-
-    @media (max-width: 760px) {
-
-      .desktop-nav {
-        display: none;
-      }
-
-
-      .menu-button {
-        display: flex;
-      }
-
-
-      .topbar {
-        min-height: 68px;
-
-        padding:
-          0 18px;
-      }
-
-
-      .brand small {
-        display: none;
-      }
-
-
-      .brand span {
-        font-size: 20px;
-      }
-
-
-      .top-actions {
-        gap: 8px;
-      }
-
-
-      .theme-toggle {
-        transform: scale(.9);
-      }
-
-
-      .menu-panel {
-        padding:
-          88px 18px 24px;
-      }
-
-
-      .menu-inner {
-        min-height:
-          calc(100vh - 112px);
-
-        display: flex;
-
-        flex-direction: column;
-      }
-
-
-      .menu-links {
-        margin-top: 30px;
-      }
-
-
-      .menu-links a {
-        padding: 16px 0;
-      }
-
-
-      .menu-links strong {
-        font-size: 28px;
-      }
-
-
-      .mobile-menu-bottom {
-        margin-top: auto;
-
-        padding-top: 24px;
-      }
-
-    }
-
-
-    @media (max-width: 420px) {
-
-      .topbar {
-        padding:
-          0 14px;
-      }
-
-
-      .menu-button {
-        min-width: 82px;
-
-        height: 40px;
-      }
-
-
-      .menu-panel {
-        padding-left: 14px;
-
-        padding-right: 14px;
-      }
-
-
-      .menu-links a {
-        grid-template-columns:
-          30px
-          1fr
-          20px;
-
-        padding: 14px 0;
-      }
-
-
-      .menu-links strong {
-        font-size: 25px;
-      }
-
-
-      .menu-social {
-        grid-template-columns:
-          1fr 1fr;
-      }
-
-    }
-
   </style>
 </head>
 
 
 <body>
 
-  <!-- =========================================================
-       CUSTOM CURSOR
-       ---------------------------------------------------------
-       negative-cursor.js controls this element.
+  <!-- =======================================================
+       CURSOR
+       ======================================================= -->
 
-       This is separate from the website content.
-       ========================================================= -->
+  <div id="cursor-invert" aria-hidden="true"></div>
+
+
+  <!-- =======================================================
+       HEADER
+       ======================================================= -->
+
+  <header class="topbar">
+
+    <a
+      class="brand"
+      href="#home"
+      aria-label="WANNABENOOB home"
+    >
+      <span>WN.</span>
+      <small>MD MAHEDE HASAN</small>
+    </a>
+
+
+    <!-- DESKTOP NAVIGATION -->
+
+    <nav
+      class="desktop-nav"
+      aria-label="Primary navigation"
+    >
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#journey">Journey</a>
+      <a href="#creator">Creator</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+
+    <div class="top-actions">
+
+      <!-- THEME -->
+
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Toggle colour theme"
+      >
+        <span class="sun">○</span>
+
+        <span class="toggle-track">
+          <i></i>
+        </span>
+
+        <span class="moon">●</span>
+      </button>
+
+
+      <!-- MOBILE MENU -->
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-expanded="false"
+        aria-controls="menuPanel"
+      >
+        <span class="menu-label">Menu</span>
+
+        <span
+          class="menu-icon"
+          aria-hidden="true"
+        >
+          <i></i>
+          <i></i>
+        </span>
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =======================================================
+       MOBILE MENU
+       ======================================================= -->
 
   <div
-    id="cursor-invert"
-    aria-hidden="true">
-  </div>
+    class="menu-panel"
+    id="menuPanel"
+    aria-hidden="true"
+  >
 
+    <div class="menu-inner">
 
-  <div class="site-shell">
+      <div class="mobile-menu-top">
 
+        <div>
 
-    <!-- =======================================================
-         TOP NAVIGATION
-         -------------------------------------------------------
-         CSS:
-         .topbar
-         .brand
-         .desktop-nav
-         .theme-toggle
-         .menu-button
-         ======================================================= -->
+          <p class="eyebrow">
+            Navigation
+          </p>
 
-    <header class="topbar">
+          <p class="menu-note">
+            Design / Motion / Code / Digital Worlds
+          </p>
 
-      <a
-        class="brand"
-        href="#home"
-        aria-label="WANNABENOOB home">
+        </div>
 
-        <span>WN.</span>
+        <span class="mobile-menu-index">
+          01—07
+        </span>
 
-        <small>
-          MD MAHEDE HASAN
-        </small>
+      </div>
 
-      </a>
-
-
-      <!-- DESKTOP NAVIGATION -->
 
       <nav
-        class="desktop-nav"
-        aria-label="Primary navigation">
+        class="menu-links"
+        aria-label="Mobile navigation"
+      >
+
+        <a href="#home">
+          <span class="menu-number">01</span>
+          <strong>Home</strong>
+          <span class="menu-arrow">↗</span>
+        </a>
 
         <a href="#about">
-          About
+          <span class="menu-number">02</span>
+          <strong>About</strong>
+          <span class="menu-arrow">↗</span>
         </a>
 
         <a href="#work">
-          Work
+          <span class="menu-number">03</span>
+          <strong>Selected Work</strong>
+          <span class="menu-arrow">↗</span>
         </a>
 
         <a href="#services">
-          Services
+          <span class="menu-number">04</span>
+          <strong>Services</strong>
+          <span class="menu-arrow">↗</span>
         </a>
 
         <a href="#journey">
-          Journey
+          <span class="menu-number">05</span>
+          <strong>Journey</strong>
+          <span class="menu-arrow">↗</span>
         </a>
 
         <a href="#creator">
-          Creator
+          <span class="menu-number">06</span>
+          <strong>Creator</strong>
+          <span class="menu-arrow">↗</span>
         </a>
 
         <a href="#contact">
-          Contact
+          <span class="menu-number">07</span>
+          <strong>Contact</strong>
+          <span class="menu-arrow">↗</span>
         </a>
 
       </nav>
 
 
-      <!-- RIGHT SIDE ACTIONS -->
+      <div class="mobile-menu-bottom">
 
-      <div class="top-actions">
+        <span class="mobile-menu-label">
+          Connect
+        </span>
 
-        <!-- LIGHT / DARK MODE -->
+        <div class="menu-social">
 
-        <button
-          class="theme-toggle"
-          id="themeToggle"
-          type="button"
-          aria-label="Toggle colour theme">
-
-          <span class="sun">
-            ○
-          </span>
-
-          <span class="toggle-track">
-            <i></i>
-          </span>
-
-          <span class="moon">
-            ●
-          </span>
-
-        </button>
-
-
-        <!-- MOBILE MENU -->
-
-        <button
-          class="menu-button"
-          id="menuButton"
-          type="button"
-          aria-expanded="false"
-          aria-controls="menuPanel">
-
-          <span class="menu-label">
-            Menu
-          </span>
-
-          <span
-            class="menu-icon"
-            aria-hidden="true">
-
-            <i></i>
-            <i></i>
-
-          </span>
-
-        </button>
-
-      </div>
-
-    </header>
-
-
-
-    <!-- =======================================================
-         MOBILE MENU
-         -------------------------------------------------------
-         CSS:
-         .menu-panel
-         .menu-links
-         .menu-social
-
-         JS:
-         script.js controls the menu behaviour.
-         ======================================================= -->
-
-    <div
-      class="menu-panel"
-      id="menuPanel"
-      aria-hidden="true">
-
-      <div class="menu-inner">
-
-
-        <div class="mobile-menu-top">
-
-          <div>
-
-            <p class="eyebrow">
-              Navigation
-            </p>
-
-            <p class="menu-note">
-              Design / Motion / Code / Digital Worlds
-            </p>
-
-          </div>
-
-          <span class="mobile-menu-index">
-            01—07
-          </span>
-
-        </div>
-
-
-        <nav
-          class="menu-links"
-          aria-label="Mobile navigation">
-
-          <a href="#home">
-            <span class="menu-number">
-              01
-            </span>
-
-            <strong>
-              Home
-            </strong>
-
-            <span class="menu-arrow">
-              ↗
-            </span>
+          <a
+            href="https://www.youtube.com/@WannabeNoob"
+            target="_blank"
+            rel="noopener"
+          >
+            YouTube <span>↗</span>
           </a>
 
-
-          <a href="#about">
-            <span class="menu-number">
-              02
-            </span>
-
-            <strong>
-              About
-            </strong>
-
-            <span class="menu-arrow">
-              ↗
-            </span>
+          <a
+            href="https://www.instagram.com/itzsmn"
+            target="_blank"
+            rel="noopener"
+          >
+            Instagram <span>↗</span>
           </a>
 
-
-          <a href="#work">
-            <span class="menu-number">
-              03
-            </span>
-
-            <strong>
-              Selected Work
-            </strong>
-
-            <span class="menu-arrow">
-              ↗
-            </span>
+          <a
+            href="https://www.facebook.com/ITZSMN"
+            target="_blank"
+            rel="noopener"
+          >
+            Facebook <span>↗</span>
           </a>
 
-
-          <a href="#services">
-            <span class="menu-number">
-              04
-            </span>
-
-            <strong>
-              Services
-            </strong>
-
-            <span class="menu-arrow">
-              ↗
-            </span>
+          <a
+            href="https://discord.gg/EbyqKHkJaD"
+            target="_blank"
+            rel="noopener"
+          >
+            Discord <span>↗</span>
           </a>
-
-
-          <a href="#journey">
-            <span class="menu-number">
-              05
-            </span>
-
-            <strong>
-              Journey
-            </strong>
-
-            <span class="menu-arrow">
-              ↗
-            </span>
-          </a>
-
-
-          <a href="#creator">
-            <span class="menu-number">
-              06
-            </span>
-
-            <strong>
-              Creator
-            </strong>
-
-            <span class="menu-arrow">
-              ↗
-            </span>
-          </a>
-
-
-          <a href="#contact">
-            <span class="menu-number">
-              07
-            </span>
-
-            <strong>
-              Contact
-            </strong>
-
-            <span class="menu-arrow">
-              ↗
-            </span>
-          </a>
-
-        </nav>
-
-
-        <div class="mobile-menu-bottom">
-
-          <span class="mobile-menu-label">
-            Connect
-          </span>
-
-
-          <div class="menu-social">
-
-            <a
-              href="https://www.youtube.com/@WannabeNoob"
-              target="_blank"
-              rel="noopener">
-
-              YouTube
-
-              <span>
-                ↗
-              </span>
-
-            </a>
-
-
-            <a
-              href="https://www.instagram.com/itzsmn"
-              target="_blank"
-              rel="noopener">
-
-              Instagram
-
-              <span>
-                ↗
-              </span>
-
-            </a>
-
-
-            <a
-              href="https://www.facebook.com/ITZSMN"
-              target="_blank"
-              rel="noopener">
-
-              Facebook
-
-              <span>
-                ↗
-              </span>
-
-            </a>
-
-
-            <a
-              href="https://discord.gg/EbyqKHkJaD"
-              target="_blank"
-              rel="noopener">
-
-              Discord
-
-              <span>
-                ↗
-              </span>
-
-            </a>
-
-          </div>
 
         </div>
 
@@ -1193,294 +429,80 @@
 
     </div>
 
+  </div>
 
 
-    <main>
+  <!-- =======================================================
+       HERO
+       ======================================================= -->
 
+  <main>
 
-      <!-- =====================================================
-           01 — HERO
-           -----------------------------------------------------
-           PHOTO:
-           .hero::before
+    <section
+      class="hero"
+      id="home"
+    >
 
-           LIGHT:
-           assets/day.PNG
-
-           DARK:
-           assets/night.PNG
-
-           TEXT:
-           .hero-copy
-
-           ART:
-           .hero-art
-
-           BUTTONS:
-           .hero-buttons
-
-           BOTTOM TAGS:
-           .hero-bottom
-
-           IMPORTANT:
-           There is NO .hero::after overlay.
-           ===================================================== -->
-
-      <section
-        class="hero"
-        id="home">
-
-
-        <!-- HERO META -->
-
-        <div class="hero-meta">
-
-          <span>
-            London, UK
-          </span>
-
-          <span>
-            Creative Developer / Visual Artist
-          </span>
-
-          <span>
-            2010 — Present
-          </span>
-
-        </div>
-
-
-        <div class="hero-grid">
-
-
-          <!-- HERO TEXT -->
-
-          <div class="hero-copy">
-
-            <p class="eyebrow">
-              01 / Introduction
-            </p>
-
-
-            <h1>
-              MD Mahede
-              <br>
-
-              <em>
-                Hasan
-              </em>
-
-              <br>
-
-              Chowdhury<span>.</span>
-            </h1>
-
-
-            <p class="hero-lead">
-              I build visual identities, cinematic experiences
-              and interactive digital worlds — from graphic design
-              and motion to FiveM development and the
-              WANNABENOOB creator universe.
-            </p>
-
-
-            <div class="hero-buttons">
-
-              <a
-                class="btn btn-primary"
-                href="#work">
-
-                Explore my work
-
-                <span>
-                  ↗
-                </span>
-
-              </a>
-
-
-              <a
-                class="btn btn-quiet"
-                href="#contact">
-
-                Start a conversation
-
-                <span>
-                  →
-                </span>
-
-              </a>
-
-            </div>
-
-          </div>
-
-
-
-          <!-- =================================================
-               HERO ART
-               -------------------------------------------------
-               No background.
-               No black box.
-               No white box.
-               ================================================= -->
-
-          <div
-            class="hero-art"
-            aria-label="WANNABENOOB visual identity">
-
-            <div class="art-red">
-              創
-            </div>
-
-            <div class="art-wmark">
-              WN.
-            </div>
-
-            <div class="art-caption">
-              WANNABENOOB
-              <br>
-              Creative practice / London
-            </div>
-
-            <div class="art-index">
-              01—04
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- HERO CATEGORY BAR -->
-
-        <div class="hero-bottom">
-
-          <span>
-            Graphic Design
-          </span>
-
-          <span>
-            Photography
-          </span>
-
-          <span>
-            Motion
-          </span>
-
-          <span>
-            Web
-          </span>
-
-          <span>
-            FiveM / Qbox
-          </span>
-
-          <span>
-            Visual Systems
-          </span>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =====================================================
-           INTRO STRIP
-           -----------------------------------------------------
-           CSS:
-           .intro-strip
-           ===================================================== -->
-
-      <section class="intro-strip">
-
-        <p>
-          Design is the starting point.
-          <strong>
-            Technology is the medium.
-          </strong>
-          Experience is the result.
-        </p>
+      <div class="hero-meta">
 
         <span>
-          Scroll to explore ↓
+          London, UK
         </span>
 
-      </section>
+        <span>
+          Creative Developer / Visual Artist
+        </span>
+
+        <span>
+          2010 — Present
+        </span>
+
+      </div>
 
 
-
-      <!-- =====================================================
-           02 — ABOUT
-           -----------------------------------------------------
-           CSS:
-           .about
-           .about-grid
-           .about-copy
-           .facts
-           ===================================================== -->
-
-      <section
-        class="section about"
-        id="about">
+      <div class="hero-grid">
 
 
-        <div class="section-head">
+        <!-- HERO TEXT -->
+
+        <div class="hero-copy">
 
           <p class="eyebrow">
-            02 / About
+            01 / Introduction
           </p>
 
-          <span>
-            Profile
-          </span>
-
-        </div>
-
-
-        <div class="about-grid">
-
-          <h2>
-            More than a designer.
+          <h1>
+            MD Mahede
             <br>
+            <em>Hasan</em>
+            <br>
+            Chowdhury<span>.</span>
+          </h1>
 
-            <em>
-              A creative builder.
-            </em>
-
-          </h2>
-
-
-          <div class="about-copy">
-
-            <p>
-              My work sits between visual design and technology.
-              I started with graphic design around 2010, then
-              expanded into photography, video editing, motion
-              graphics, interactive web experiences and game
-              development.
-            </p>
+          <p class="hero-lead">
+            I build visual identities, cinematic experiences
+            and interactive digital worlds — from graphic
+            design and motion to FiveM development and the
+            WANNABENOOB creator universe.
+          </p>
 
 
-            <p>
-              Today I combine those disciplines to create polished
-              digital experiences — especially within FiveM/Qbox,
-              gaming communities, creator brands and cinematic
-              visual projects.
-            </p>
-
+          <div class="hero-buttons">
 
             <a
-              class="text-link"
-              href="#journey">
+              class="btn btn-primary"
+              href="#work"
+            >
+              Explore my work
+              <span>↗</span>
+            </a>
 
-              View my journey
-
-              <span>
-                ↗
-              </span>
-
+            <a
+              class="btn btn-quiet"
+              href="#contact"
+            >
+              Start a conversation
+              <span>→</span>
             </a>
 
           </div>
@@ -1488,1341 +510,1022 @@
         </div>
 
 
-        <!-- ABOUT FACTS -->
+        <!-- HERO ART -->
 
-        <div class="facts">
+        <div
+          class="hero-art"
+          aria-label="WANNABENOOB visual identity"
+        >
 
-          <div>
-            <b>
-              2010
-            </b>
-
-            <span>
-              Design began
-            </span>
+          <div class="art-red">
+            創
           </div>
 
-
-          <div>
-            <b>
-              5+
-            </b>
-
-            <span>
-              Creative disciplines
-            </span>
+          <div class="art-wmark">
+            WN.
           </div>
 
-
-          <div>
-            <b>
-              WANNABENOOB
-            </b>
-
-            <span>
-              Creator identity
-            </span>
+          <div class="art-caption">
+            WANNABENOOB
+            <br>
+            Creative practice / London
           </div>
 
-
-          <div>
-            <b>
-              London
-            </b>
-
-            <span>
-              Based in the UK
-            </span>
+          <div class="art-index">
+            01—04
           </div>
 
         </div>
 
-      </section>
+      </div>
 
 
+      <!-- HERO BOTTOM -->
 
-      <!-- =====================================================
-           03 — SELECTED WORK
-           -----------------------------------------------------
-           CSS:
-           .work
-           .project-grid
-           .project
-           .project-image
-           .project-info
+      <div class="hero-bottom">
 
-           IMAGE FILES:
-           Light Studio → assets/light.png
-           Hydragonz   → assets/hydra.png
-           Motion      → assets/motion.jpg
-           Web         → assets/web.png
-           Photo       → assets/photo.png
-           FiveM       → assets/fivem.jpg
-           ===================================================== -->
+        <span>Graphic Design</span>
+        <span>Photography</span>
+        <span>Motion</span>
+        <span>Web</span>
+        <span>FiveM / Qbox</span>
+        <span>Visual Systems</span>
 
-      <section
-        class="section work"
-        id="work">
+      </div>
+
+    </section>
 
 
-        <div class="section-head light">
+    <!-- =====================================================
+         ABOUT
+         ===================================================== -->
 
-          <p class="eyebrow">
-            03 / Selected work
-          </p>
+    <section
+      class="section about-section"
+      id="about"
+    >
 
-          <span>
-            Projects / 06
-          </span>
+      <div class="section-head">
 
-        </div>
+        <span class="section-number">
+          02
+        </span>
+
+        <p class="eyebrow">
+          About
+        </p>
+
+      </div>
 
 
-        <div class="work-intro">
+      <div class="about-grid">
+
+        <div class="about-title">
 
           <h2>
-            Built with
+            Creative work
             <br>
-
-            <em>
-              purpose.
-            </em>
+            across
+            <em>different worlds.</em>
           </h2>
-
-
-          <div>
-
-            <p>
-              Selected projects across creative technology,
-              gaming, visual design and digital experiences.
-            </p>
-
-
-            <!-- PROJECT FILTERS -->
-
-            <div
-              class="filters"
-              role="tablist">
-
-              <button
-                class="filter active"
-                data-filter="all">
-
-                All
-
-              </button>
-
-
-              <button
-                class="filter"
-                data-filter="development">
-
-                Development
-
-              </button>
-
-
-              <button
-                class="filter"
-                data-filter="visual">
-
-                Visual
-
-              </button>
-
-
-              <button
-                class="filter"
-                data-filter="community">
-
-                Community
-
-              </button>
-
-            </div>
-
-          </div>
 
         </div>
 
 
+        <div class="about-copy">
 
-        <div class="project-grid">
+          <p>
+            I'm MD Mahede Hasan Chowdhury, a creative
+            developer, visual designer, photographer,
+            editor and FiveM / Qbox creator based in London.
+          </p>
 
+          <p>
+            My work sits between design, technology,
+            photography, motion and interactive digital
+            experiences.
+          </p>
 
-          <!-- =================================================
-               PROJECT 01 — LIGHT STUDIO
-               ================================================= -->
+          <p>
+            Since 2010, I've worked across visual identity,
+            graphic design, photography, video editing,
+            motion graphics, web development and digital
+            communities.
+          </p>
 
-          <article
-            class="project featured"
-            data-category="development visual"
-            data-project="light">
+        </div>
 
+      </div>
 
-            <div class="project-image light-art">
-
-              <img
-                src="assets/light.png"
-                alt="Light Studio / Light Builder"
-                loading="lazy">
-
-
-              <div class="image-overlay">
-
-                <span>
-                  LS
-                </span>
-
-                <i>
-                  Light Studio
-                </i>
-
-              </div>
-
-            </div>
+    </section>
 
 
-            <div class="project-info">
+    <!-- =====================================================
+         SELECTED WORK
+         ===================================================== -->
 
-              <span>
-                01 / Development
+    <section
+      class="section work-section"
+      id="work"
+    >
+
+      <div class="section-head">
+
+        <span class="section-number">
+          03
+        </span>
+
+        <p class="eyebrow">
+          Selected Work
+        </p>
+
+      </div>
+
+
+      <div class="work-grid">
+
+
+        <!-- LIGHT STUDIO -->
+
+        <article class="project-card">
+
+          <div class="project-image">
+
+            <img
+              src="assets/light.png"
+              alt="Light Studio"
+            >
+
+          </div>
+
+          <div class="project-info">
+
+            <div>
+
+              <span class="project-number">
+                01
               </span>
 
               <h3>
-                Light Studio / Light Builder
+                Light Studio
               </h3>
 
-              <p>
-                A cinematic lighting system for FiveM/Qbox
-                scenes, showcases, meets and visual production.
-              </p>
-
-
-              <button
-                class="open-project"
-                data-open="light">
-
-                View case study ↗
-
-              </button>
-
             </div>
 
-          </article>
+            <p>
+              FiveM / Qbox
+            </p>
+
+          </div>
+
+        </article>
 
 
+        <!-- HYDRAGONZ -->
 
-          <!-- =================================================
-               PROJECT 02 — HYDRAGONZ
-               ================================================= -->
+        <article class="project-card">
 
-          <article
-            class="project"
-            data-category="community development"
-            data-project="hydragonz">
+          <div class="project-image">
 
+            <img
+              src="assets/hydra.png"
+              alt="Hydragonz"
+            >
 
-            <div class="project-image hydra-art">
+          </div>
 
-              <img
-                src="assets/hydra.png"
-                alt="Hydragonz community"
-                loading="lazy">
+          <div class="project-info">
 
+            <div>
 
-              <div class="image-overlay">
-
-                <span>
-                  H
-                </span>
-
-                <i>
-                  Hydragonz
-                </i>
-
-              </div>
-
-            </div>
-
-
-            <div class="project-info">
-
-              <span>
-                02 / Community
+              <span class="project-number">
+                02
               </span>
 
               <h3>
                 Hydragonz
               </h3>
 
-              <p>
-                Gaming community identity, Discord ecosystem
-                and FiveM development.
-              </p>
-
-
-              <button
-                class="open-project"
-                data-open="hydragonz">
-
-                View project ↗
-
-              </button>
-
             </div>
 
-          </article>
+            <p>
+              Community / Identity
+            </p>
+
+          </div>
+
+        </article>
 
 
+        <!-- MOTION -->
 
-          <!-- =================================================
-               PROJECT 03 — MOTION
-               ================================================= -->
+        <article class="project-card">
 
-          <article
-            class="project"
-            data-category="visual">
+          <div class="project-image">
 
+            <img
+              src="assets/motion.jpg"
+              alt="Motion graphic work"
+            >
 
-            <div class="project-image motion-art">
+          </div>
 
-              <img
-                src="assets/motion.jpg"
-                alt="Motion Graphics and Video Editing"
-                loading="lazy">
+          <div class="project-info">
 
+            <div>
 
-              <div class="image-overlay">
-
-                <span>
-                  MM
-                </span>
-
-                <i>
-                  Motion / Edit
-                </i>
-
-              </div>
-
-            </div>
-
-
-            <div class="project-info">
-
-              <span>
-                03 / Visual
+              <span class="project-number">
+                03
               </span>
 
               <h3>
-                Motion & Video
+                Motion
               </h3>
 
-              <p>
-                Editing, motion graphics and cinematic
-                presentation using After Effects and
-                Premiere Pro.
-              </p>
-
-
-              <button
-                class="open-project"
-                data-open="motion">
-
-                View discipline ↗
-
-              </button>
-
             </div>
 
-          </article>
+            <p>
+              Motion Graphics / Editing
+            </p>
+
+          </div>
+
+        </article>
 
 
+        <!-- WEB -->
 
-          <!-- =================================================
-               PROJECT 04 — WEB
-               ================================================= -->
+        <article class="project-card">
 
-          <article
-            class="project"
-            data-category="development visual">
+          <div class="project-image">
 
+            <img
+              src="assets/web.png"
+              alt="Web development"
+            >
 
-            <div class="project-image web-art">
+          </div>
 
-              <img
-                src="assets/web.png"
-                alt="Interactive Web Development"
-                loading="lazy">
+          <div class="project-info">
 
+            <div>
 
-              <div class="image-overlay">
-
-                <span>
-                  { }
-                </span>
-
-                <i>
-                  Interactive Web
-                </i>
-
-              </div>
-
-            </div>
-
-
-            <div class="project-info">
-
-              <span>
-                04 / Interactive
+              <span class="project-number">
+                04
               </span>
 
               <h3>
-                Web Experiences
+                Web
               </h3>
 
-              <p>
-                Responsive HTML, CSS and JavaScript interfaces
-                with a strong visual system.
-              </p>
-
-
-              <button
-                class="open-project"
-                data-open="web">
-
-                View discipline ↗
-
-              </button>
-
             </div>
 
-          </article>
+            <p>
+              Creative Development
+            </p>
+
+          </div>
+
+        </article>
 
 
+        <!-- PHOTOGRAPHY -->
 
-          <!-- =================================================
-               PROJECT 05 — PHOTOGRAPHY
-               ================================================= -->
+        <article class="project-card">
 
-          <article
-            class="project"
-            data-category="visual">
+          <div class="project-image">
 
+            <img
+              src="assets/photo.png"
+              alt="Photography"
+            >
 
-            <div class="project-image photo-art">
+          </div>
 
-              <img
-                src="assets/photo.png"
-                alt="Photography"
-                loading="lazy">
+          <div class="project-info">
 
+            <div>
 
-              <div class="image-overlay">
-
-                <span>
-                  PH
-                </span>
-
-                <i>
-                  Photography
-                </i>
-
-              </div>
-
-            </div>
-
-
-            <div class="project-info">
-
-              <span>
-                05 / Visual
+              <span class="project-number">
+                05
               </span>
 
               <h3>
                 Photography
               </h3>
 
-              <p>
-                Photography and image-making built around
-                composition, atmosphere and storytelling.
-              </p>
-
-
-              <button
-                class="open-project"
-                data-open="photo">
-
-                View discipline ↗
-
-              </button>
-
             </div>
-
-          </article>
-
-
-
-          <!-- =================================================
-               PROJECT 06 — FIVEM / QBOX
-               ================================================= -->
-
-          <article
-            class="project"
-            data-category="development">
-
-
-            <div class="project-image qbox-art">
-
-              <img
-                src="assets/fivem.jpg"
-                alt="FiveM and Qbox Development"
-                loading="lazy">
-
-
-              <div class="image-overlay">
-
-                <span>
-                  QX
-                </span>
-
-                <i>
-                  Qbox / FiveM
-                </i>
-
-              </div>
-
-            </div>
-
-
-            <div class="project-info">
-
-              <span>
-                06 / Development
-              </span>
-
-              <h3>
-                FiveM / Qbox Systems
-              </h3>
-
-              <p>
-                Custom resources, NUI interfaces, gameplay
-                systems and server-side experiences.
-              </p>
-
-
-              <button
-                class="open-project"
-                data-open="qbox">
-
-                View discipline ↗
-
-              </button>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =====================================================
-           04 — SERVICES
-           -----------------------------------------------------
-           CSS:
-           .services
-           .services-list
-           .service
-           ===================================================== -->
-
-      <section
-        class="section services"
-        id="services">
-
-
-        <div class="section-head">
-
-          <p class="eyebrow">
-            04 / Services
-          </p>
-
-          <span>
-            What I do
-          </span>
-
-        </div>
-
-
-        <div class="services-list">
-
-          <button
-            class="service"
-            data-service="design">
-
-            <span>
-              01
-            </span>
-
-            <strong>
-              Visual & Graphic Design
-            </strong>
-
-            <i>
-              ↗
-            </i>
-
-          </button>
-
-
-          <button
-            class="service"
-            data-service="motion">
-
-            <span>
-              02
-            </span>
-
-            <strong>
-              Motion & Video
-            </strong>
-
-            <i>
-              ↗
-            </i>
-
-          </button>
-
-
-          <button
-            class="service"
-            data-service="web">
-
-            <span>
-              03
-            </span>
-
-            <strong>
-              Web & Interactive
-            </strong>
-
-            <i>
-              ↗
-            </i>
-
-          </button>
-
-
-          <button
-            class="service"
-            data-service="fivem">
-
-            <span>
-              04
-            </span>
-
-            <strong>
-              FiveM / Qbox Development
-            </strong>
-
-            <i>
-              ↗
-            </i>
-
-          </button>
-
-
-          <button
-            class="service"
-            data-service="creator">
-
-            <span>
-              05
-            </span>
-
-            <strong>
-              Creator & Community Branding
-            </strong>
-
-            <i>
-              ↗
-            </i>
-
-          </button>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =====================================================
-           05 — JOURNEY
-           -----------------------------------------------------
-           CSS:
-           .journey
-           .journey-grid
-           .timeline
-           ===================================================== -->
-
-      <section
-        class="section journey"
-        id="journey">
-
-
-        <div class="section-head">
-
-          <p class="eyebrow">
-            05 / Journey
-          </p>
-
-          <span>
-            Experience
-          </span>
-
-        </div>
-
-
-        <div class="journey-grid">
-
-          <h2>
-            From frames
-            <br>
-            to
-            <em>
-              systems.
-            </em>
-          </h2>
-
-
-          <div class="timeline">
-
-
-            <div>
-
-              <span>
-                2010 —
-              </span>
-
-              <h3>
-                Graphic Design
-              </h3>
-
-              <p>
-                Built a foundation in graphic design and
-                visual communication.
-              </p>
-
-            </div>
-
-
-            <div>
-
-              <span>
-                Next
-              </span>
-
-              <h3>
-                Photography & Video
-              </h3>
-
-              <p>
-                Expanded into photography, editing,
-                compositing and cinematic presentation.
-              </p>
-
-            </div>
-
-
-            <div>
-
-              <span>
-                Then
-              </span>
-
-              <h3>
-                Creative Technology
-              </h3>
-
-              <p>
-                Moved into HTML, CSS, JavaScript and
-                interactive digital experiences.
-              </p>
-
-            </div>
-
-
-            <div>
-
-              <span>
-                Now
-              </span>
-
-              <h3>
-                FiveM / Qbox + WANNABENOOB
-              </h3>
-
-              <p>
-                Combining design, code, gaming, community
-                and creator content into one practice.
-              </p>
-
-            </div>
-
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =====================================================
-           06 — CREATOR / COMMUNITY
-           -----------------------------------------------------
-           CSS:
-           .creator
-           .creator-grid
-           .social-grid
-           .community-card
-           .team
-           ===================================================== -->
-
-      <section
-        class="section creator"
-        id="creator">
-
-
-        <div class="section-head light">
-
-          <p class="eyebrow">
-            06 / Creator & community
-          </p>
-
-          <span>
-            WANNABENOOB
-          </span>
-
-        </div>
-
-
-        <div class="creator-grid">
-
-
-          <div>
-
-            <p class="creator-kicker">
-              Creator identity
-            </p>
-
-
-            <h2>
-              WANNABENOOB<span>.</span>
-            </h2>
-
-
-            <p class="creator-copy">
-              Gaming, FiveM, development, visual design
-              and community — brought together under one name.
-            </p>
-
-
-            <!-- SOCIAL LINKS -->
-
-            <div class="social-grid">
-
-
-              <a
-                href="https://www.youtube.com/@WannabeNoob"
-                target="_blank"
-                rel="noopener">
-
-                <small>
-                  YouTube
-                </small>
-
-                <b>
-                  @WannabeNoob
-                </b>
-
-                <span>
-                  ↗
-                </span>
-
-              </a>
-
-
-              <a
-                href="https://www.instagram.com/itzsmn"
-                target="_blank"
-                rel="noopener">
-
-                <small>
-                  Instagram
-                </small>
-
-                <b>
-                  itzsmn
-                </b>
-
-                <span>
-                  ↗
-                </span>
-
-              </a>
-
-
-              <a
-                href="https://www.facebook.com/ITZSMN"
-                target="_blank"
-                rel="noopener">
-
-                <small>
-                  Facebook
-                </small>
-
-                <b>
-                  ITZSMN
-                </b>
-
-                <span>
-                  ↗
-                </span>
-
-              </a>
-
-
-              <a
-                href="https://discord.gg/EbyqKHkJaD"
-                target="_blank"
-                rel="noopener">
-
-                <small>
-                  Discord
-                </small>
-
-                <b>
-                  Hydragonz
-                </b>
-
-                <span>
-                  ↗
-                </span>
-
-              </a>
-
-
-            </div>
-
-          </div>
-
-
-
-          <!-- HYDRAGONZ CARD -->
-
-          <div class="community-card">
-
-            <p class="eyebrow">
-              Hydragonz / Discord
-            </p>
-
-
-            <h3>
-              A community built around
-              gaming and FiveM.
-            </h3>
-
 
             <p>
-              Connect with the community and explore the work
-              behind the server ecosystem.
+              Photography / Visual Storytelling
             </p>
-
-
-            <a
-              class="btn btn-light"
-              href="https://discord.gg/EbyqKHkJaD"
-              target="_blank"
-              rel="noopener">
-
-              Join Discord
-
-              <span>
-                ↗
-              </span>
-
-            </a>
-
-
-            <div class="team">
-
-
-              <div>
-
-                <b>
-                  WANNABENOOB
-                </b>
-
-                <span>
-                  Owner
-                </span>
-
-              </div>
-
-
-              <div>
-
-                <b>
-                  XISAN
-                </b>
-
-                <span>
-                  Developer
-                </span>
-
-              </div>
-
-
-              <div>
-
-                <b>
-                  YASIR
-                </b>
-
-                <span>
-                  Staff
-                </span>
-
-              </div>
-
-
-            </div>
 
           </div>
 
-        </div>
-
-      </section>
+        </article>
 
 
+        <!-- FIVEM -->
 
-      <!-- =====================================================
-           07 — CONTACT
-           -----------------------------------------------------
-           CSS:
-           .contact
-           .contact-main
-           .contact-actions
-           ===================================================== -->
+        <article class="project-card">
 
-      <section
-        class="section contact"
-        id="contact">
+          <div class="project-image">
+
+            <img
+              src="assets/fivem.jpg"
+              alt="FiveM and Qbox development"
+            >
+
+          </div>
+
+          <div class="project-info">
+
+            <div>
+
+              <span class="project-number">
+                06
+              </span>
+
+              <h3>
+                FiveM / Qbox
+              </h3>
+
+            </div>
+
+            <p>
+              Development / Digital Worlds
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
 
 
-        <div class="section-head">
+    <!-- =====================================================
+         SERVICES
+         ===================================================== -->
 
-          <p class="eyebrow">
-            07 / Contact
-          </p>
+    <section
+      class="section services-section"
+      id="services"
+    >
 
-          <span>
-            Let's work
+      <div class="section-head">
+
+        <span class="section-number">
+          04
+        </span>
+
+        <p class="eyebrow">
+          Services
+        </p>
+
+      </div>
+
+
+      <div class="services-list">
+
+
+        <div class="service-row">
+
+          <span class="service-number">
+            01
+          </span>
+
+          <div>
+            <h3>
+              Graphic Design
+            </h3>
+
+            <p>
+              Visual identities, branding, layouts,
+              promotional graphics and digital design.
+            </p>
+          </div>
+
+          <span class="service-arrow">
+            ↗
           </span>
 
         </div>
 
 
-        <div class="contact-main">
+        <div class="service-row">
+
+          <span class="service-number">
+            02
+          </span>
+
+          <div>
+            <h3>
+              Motion & Video
+            </h3>
+
+            <p>
+              Motion graphics, video editing, cinematic
+              visuals and digital storytelling.
+            </p>
+          </div>
+
+          <span class="service-arrow">
+            ↗
+          </span>
+
+        </div>
+
+
+        <div class="service-row">
+
+          <span class="service-number">
+            03
+          </span>
+
+          <div>
+            <h3>
+              Web Development
+            </h3>
+
+            <p>
+              Creative websites, interactive experiences
+              and modern visual interfaces.
+            </p>
+          </div>
+
+          <span class="service-arrow">
+            ↗
+          </span>
+
+        </div>
+
+
+        <div class="service-row">
+
+          <span class="service-number">
+            04
+          </span>
+
+          <div>
+            <h3>
+              FiveM / Qbox
+            </h3>
+
+            <p>
+              Custom resources, interfaces, systems and
+              immersive GTA V digital environments.
+            </p>
+          </div>
+
+          <span class="service-arrow">
+            ↗
+          </span>
+
+        </div>
+
+
+        <div class="service-row">
+
+          <span class="service-number">
+            05
+          </span>
+
+          <div>
+            <h3>
+              Photography
+            </h3>
+
+            <p>
+              Photography, visual composition and
+              post-production.
+            </p>
+          </div>
+
+          <span class="service-arrow">
+            ↗
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         JOURNEY
+         ===================================================== -->
+
+    <section
+      class="section journey-section"
+      id="journey"
+    >
+
+      <div class="section-head">
+
+        <span class="section-number">
+          05
+        </span>
+
+        <p class="eyebrow">
+          Journey
+        </p>
+
+      </div>
+
+
+      <div class="journey-grid">
+
+        <div class="journey-intro">
 
           <h2>
-            Have an idea?
+            2010 —
             <br>
-
-            <em>
-              Let's make it real.
-            </em>
-
+            <em>Present</em>
           </h2>
 
+        </div>
+
+
+        <div class="timeline">
+
+
+          <div class="timeline-item">
+
+            <span>
+              2010
+            </span>
+
+            <div>
+
+              <h3>
+                Creative Beginning
+              </h3>
+
+              <p>
+                Started developing skills in graphic
+                design and visual communication.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item">
+
+            <span>
+              2015+
+            </span>
+
+            <div>
+
+              <h3>
+                Visual Production
+              </h3>
+
+              <p>
+                Expanded into photography, video editing,
+                motion graphics and digital content.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item">
+
+            <span>
+              2020+
+            </span>
+
+            <div>
+
+              <h3>
+                Digital Development
+              </h3>
+
+              <p>
+                Moved further into web development,
+                interactive design and digital communities.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item">
+
+            <span>
+              Now
+            </span>
+
+            <div>
+
+              <h3>
+                WANNABENOOB
+              </h3>
+
+              <p>
+                Building creative digital worlds,
+                FiveM / Qbox systems, visual experiences
+                and the WANNABENOOB creator universe.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CREATOR
+         ===================================================== -->
+
+    <section
+      class="section creator-section"
+      id="creator"
+    >
+
+      <div class="section-head">
+
+        <span class="section-number">
+          06
+        </span>
+
+        <p class="eyebrow">
+          Creator
+        </p>
+
+      </div>
+
+
+      <div class="creator-grid">
+
+        <div class="creator-brand">
+
+          <span class="creator-mark">
+            WN.
+          </span>
+
+          <h2>
+            WANNABENOOB
+          </h2>
+
+        </div>
+
+
+        <div class="creator-copy">
 
           <p>
-            For creative work, websites, motion, visual projects,
-            FiveM development or collaborations, connect with
-            WANNABENOOB.
+            WANNABENOOB is my creator identity and digital
+            universe — combining development, visual design,
+            gaming, communities and interactive experiences.
+          </p>
+
+          <p>
+            From FiveM / Qbox development to visual content
+            and community projects, the goal is to create
+            experiences that feel distinct and memorable.
           </p>
 
 
-          <div class="contact-actions">
-
+          <div class="creator-links">
 
             <a
-              class="btn btn-primary"
               href="https://www.youtube.com/@WannabeNoob"
               target="_blank"
-              rel="noopener">
-
-              Connect via YouTube ↗
-
+              rel="noopener"
+            >
+              YouTube
+              <span>↗</span>
             </a>
-
 
             <a
-              class="btn btn-outline"
-              href="https://discord.gg/EbyqKHkJaD"
+              href="https://www.instagram.com/itzsmn"
               target="_blank"
-              rel="noopener">
-
-              Message on Discord ↗
-
+              rel="noopener"
+            >
+              Instagram
+              <span>↗</span>
             </a>
 
+            <a
+              href="https://www.facebook.com/ITZSMN"
+              target="_blank"
+              rel="noopener"
+            >
+              Facebook
+              <span>↗</span>
+            </a>
+
+            <a
+              href="https://discord.gg/EbyqKHkJaD"
+              target="_blank"
+              rel="noopener"
+            >
+              Discord
+              <span>↗</span>
+            </a>
 
           </div>
 
         </div>
 
-      </section>
+      </div>
 
-    </main>
-
-
-
-    <!-- =======================================================
-         FOOTER
-         -------------------------------------------------------
-         CSS:
-         footer
-         ======================================================= -->
-
-    <footer>
+    </section>
 
 
-      <div>
+    <!-- =====================================================
+         CONTACT
+         ===================================================== -->
 
-        <strong>
-          WN.
-        </strong>
+    <section
+      class="section contact-section"
+      id="contact"
+    >
 
-        <span>
-          MD MAHEDE HASAN CHOWDHURY
+      <div class="section-head">
+
+        <span class="section-number">
+          07
         </span>
+
+        <p class="eyebrow">
+          Contact
+        </p>
 
       </div>
 
 
-      <div>
+      <div class="contact-content">
 
-        <span>
-          London / UK
-        </span>
+        <h2>
+          Let's build
+          <br>
+          something
+          <em>different.</em>
+        </h2>
 
-        <span>
-          © 2026
-        </span>
+
+        <p>
+          Have a project, creative idea or digital world
+          that needs building?
+        </p>
+
+
+        <a
+          class="contact-button"
+          href="mailto:hello@wannabenoob.com"
+        >
+          Start a conversation
+          <span>↗</span>
+        </a>
 
       </div>
 
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer class="footer">
+
+    <div class="footer-brand">
+
+      <span>
+        WN.
+      </span>
+
+      <small>
+        MD MAHEDE HASAN CHOWDHURY
+      </small>
+
+    </div>
+
+
+    <div class="footer-links">
 
       <a href="#home">
-        Back to top ↑
+        Home
       </a>
 
+      <a href="#work">
+        Work
+      </a>
 
-    </footer>
+      <a href="#contact">
+        Contact
+      </a>
+
+    </div>
 
 
-  </div>
+    <div class="footer-copy">
+
+      ©
+      <span id="year"></span>
+      WANNABENOOB
+
+    </div>
+
+  </footer>
 
 
-
-  <!-- =========================================================
-       PROJECT / SERVICE MODAL
-       ---------------------------------------------------------
-       script.js controls this modal.
-       ========================================================= -->
+  <!-- =======================================================
+       OPTIONAL MODAL
+       ======================================================= -->
 
   <div
-    class="modal"
-    id="modal"
-    aria-hidden="true">
+    class="project-modal"
+    id="projectModal"
+    aria-hidden="true"
+  >
 
-
-    <div class="modal-box">
-
+    <div class="modal-inner">
 
       <button
         class="modal-close"
         id="modalClose"
-        aria-label="Close">
-
+        type="button"
+        aria-label="Close"
+      >
         ×
-
       </button>
 
-
-      <p
-        class="eyebrow"
-        id="modalKicker">
-      </p>
-
-
-      <h2 id="modalTitle">
-      </h2>
-
-
-      <p id="modalText">
-      </p>
-
-
-      <a
-        class="btn btn-primary"
-        id="modalLink"
-        href="#">
-
-        Continue ↗
-
-      </a>
-
+      <div id="modalContent"></div>
 
     </div>
 
   </div>
 
 
-
-  <!-- =========================================================
-       MAIN JAVASCRIPT
-       ---------------------------------------------------------
-       script.js controls:
-       - theme toggle
-       - mobile menu
-       - project filters
-       - project modal
-       - service interactions
-       ========================================================= -->
+  <!-- =======================================================
+       SCRIPTS
+       ======================================================= -->
 
   <script src="script.js"></script>
-
-
-
-  <!-- =========================================================
-       NEGATIVE CURSOR
-       ---------------------------------------------------------
-       negative-cursor.js controls:
-       #cursor-invert
-
-       It only activates on devices with a mouse/fine pointer.
-       ========================================================= -->
-
   <script src="negative-cursor.js"></script>
 
 
-  <!-- =========================================================
-       MOBILE MENU SAFETY
-       ---------------------------------------------------------
-       This makes sure the mobile menu works even if the main
-       script.js does not contain the menu handler.
-       ========================================================= -->
-
   <script>
+    /* =========================================================
+       YEAR
+       ========================================================= */
+
+    const yearElement = document.getElementById("year");
+
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+
+
+    /* =========================================================
+       THEME TOGGLE FALLBACK
+       ========================================================= */
+
+    const themeToggle =
+      document.getElementById("themeToggle");
+
+    const savedTheme =
+      localStorage.getItem("mahede-theme");
+
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+    }
+
+
+    if (themeToggle) {
+
+      themeToggle.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark");
+
+        const isDark =
+          document.body.classList.contains("dark");
+
+        localStorage.setItem(
+          "mahede-theme",
+          isDark ? "dark" : "light"
+        );
+
+      });
+
+    }
+
+
+    /* =========================================================
+       MOBILE MENU FALLBACK
+       ========================================================= */
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const menuPanel =
+      document.getElementById("menuPanel");
+
+
+    if (menuButton && menuPanel) {
+
+      menuButton.addEventListener("click", () => {
+
+        const isOpen =
+          menuButton.getAttribute("aria-expanded") === "true";
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          String(!isOpen)
+        );
+
+        menuPanel.setAttribute(
+          "aria-hidden",
+          String(isOpen)
+        );
+
+        document.body.classList.toggle(
+          "menu-open",
+          !isOpen
+        );
+
+      });
+
+
+      menuPanel
+        .querySelectorAll("a")
+        .forEach((link) => {
+
+          link.addEventListener("click", () => {
+
+            menuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+            menuPanel.setAttribute(
+              "aria-hidden",
+              "true"
+            );
+
+            document.body.classList.remove(
+              "menu-open"
+            );
+
+          });
+
+        });
+
+    }
+
+
+    /* =========================================================
+       ESCAPE CLOSE MENU / MODAL
+       ========================================================= */
 
     document.addEventListener(
-      "DOMContentLoaded",
-      function () {
+      "keydown",
+      (event) => {
 
-        const menuButton =
-          document.getElementById("menuButton");
-
-        const menuPanel =
-          document.getElementById("menuPanel");
-
-
-        if (!menuButton || !menuPanel) {
+        if (event.key !== "Escape") {
           return;
         }
 
 
-        function setMenu(open) {
+        if (menuButton && menuPanel) {
 
           menuButton.setAttribute(
             "aria-expanded",
-            String(open)
+            "false"
           );
-
 
           menuPanel.setAttribute(
             "aria-hidden",
-            String(!open)
+            "true"
           );
 
-
-          document.body.classList.toggle(
-            "menu-open",
-            open
+          document.body.classList.remove(
+            "menu-open"
           );
 
         }
 
-
-        menuButton.addEventListener(
-          "click",
-          function () {
-
-            const currentlyOpen =
-              menuButton.getAttribute(
-                "aria-expanded"
-              ) === "true";
-
-
-            setMenu(!currentlyOpen);
-
-          }
-        );
-
-
-        menuPanel
-          .querySelectorAll(
-            'a[href^="#"]'
-          )
-          .forEach(
-            function (link) {
-
-              link.addEventListener(
-                "click",
-                function () {
-
-                  setMenu(false);
-
-                }
-              );
-
-            }
-          );
-
-
-        document.addEventListener(
-          "keydown",
-          function (event) {
-
-            if (event.key === "Escape") {
-
-              setMenu(false);
-
-            }
-
-          }
-        );
-
       }
     );
-
   </script>
-
 
 </body>
 </html>
